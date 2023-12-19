@@ -1,6 +1,7 @@
 const reducer = (state, action) => {
   const { type, payload } = action;
   const newState = { ...state };
+
   switch (type) {
     case "START_GAME":
       newState.word = payload.word;
@@ -34,7 +35,11 @@ const reducer = (state, action) => {
       newState.gameState = "gaveup";
       newState.guessedLetters = newState.word.split("");
       return newState;
-    default:
+    case "CHANGE_CATEGORY":
+      newState.topic = payload.category;
+      return newState;
+    
+      default:
       return state;
   }
 };

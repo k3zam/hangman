@@ -5,6 +5,10 @@ export const AlertBox = ({ gameState, wins, losses, onRestart }) => {
     gaveup: "You Gave Up!",
   };
 
+  const handleRestart = () => {
+    onRestart();
+  };
+
   return (
     <div
       className={
@@ -20,7 +24,7 @@ export const AlertBox = ({ gameState, wins, losses, onRestart }) => {
         <br />
         You lost {losses} games
       </p>
-      <button onClick={onRestart} className="btn btn-white">
+      <button onClick={handleRestart} className="btn btn-white">
         Start New Game
       </button>
     </div>
